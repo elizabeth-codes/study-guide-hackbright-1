@@ -16,8 +16,11 @@ def print_list(items):
         3
         9
     """
+    for item in items:
+        print(item)
 
-    print("the wrong thing")
+
+print_list("items")
 
 
 def long_words(words):
@@ -36,8 +39,12 @@ def long_words(words):
         >>> long_words(["all", "are", "tiny"])
         []
     """
+    long_words = []
+    for word in words:
+        if len(word) > 4:
+            long_words.append(word)
 
-    return ['the wrong thing']
+    return ['long_words']
 
 
 def n_long_words(words, n):
@@ -341,36 +348,28 @@ if __name__ == "__main__":
     if not result.failed:
         print("\nALL TESTS PASSED. GOOD WORK!\n")
 
-
-
-
-
-
-
 #         What is an algorithm? Provide some examples, both in the context in of computer science and beyond.
-# >>>I'm not super sure this is something we learned yet, but my understanding is that it is a method by which to approach a problem. 
+# >>>I'm not super sure this is something we learned yet, but my understanding is that it is a method by which to approach a problem.
 # An example would be FIFO, first in first out, where you process something in the order in which it arrives
 # Another example would be Dijkstra's algorithm which searches for the shortest path between two points, kind of like Uber.
 
-
-
 # What is a heuristic? How do they relate to algorithms?
 
-#we didn't learn this but according to the internet a heuristic algorithm is a procedure that determines near optimal solutions to an optimization problem. 
-# however, this is achieved by trading optimality for completeness, accuracy or prevision for speed. 
+#we didn't learn this but according to the internet a heuristic algorithm is a procedure that determines near optimal solutions to an optimization problem.
+# however, this is achieved by trading optimality for completeness, accuracy or prevision for speed.
 
 # What is the brute force method? What are some problems with it?
 
-#we also didn't learn this in class, but I understand it to be kind of approaching a problem by means of an inelegant solution at first just to get it solved. 
+#we also didn't learn this in class, but I understand it to be kind of approaching a problem by means of an inelegant solution at first just to get it solved.
 #looked it up and I was wrong. it is actually looking at every possible solution, rather than trying to solve for the optimal solution
-#an example would be if you ahve a lock and you don't know the combo, trying every combo one by one. 
-#the problem is that it relies on sheer computing power rather than efficiency. 
+#an example would be if you ahve a lock and you don't know the combo, trying every combo one by one.
+#the problem is that it relies on sheer computing power rather than efficiency.
 
 # What is version control? How is it different than simply saving a file?
 
 #version control is the means by which developers can coordinate with one another on the same piece of code.  (or a single developer can coordinate with themself over different computers/times)
-#saving a file simply means that the progress has locally been saved in the current folder. 
-#however, with version control, you can make changes to a piece of code locally and then decide whether or not to push the code to the main branch. 
+#saving a file simply means that the progress has locally been saved in the current folder.
+#however, with version control, you can make changes to a piece of code locally and then decide whether or not to push the code to the main branch.
 #that way, multiple people can be working on the same piece of code, and if they work on the same section within the code they can have a conversation about which version to use
 #it also helps back up code so that even if your computer in stolen on the BART, you have not lost all of your progress.
 
@@ -383,11 +382,11 @@ if __name__ == "__main__":
 #tells you all the changes that were made to the repository, by whom, when.
 
 # git init
-#this creates an empty git repository. 
+#this creates an empty git repository.
 
 # git status
-#this tells you what the status of the code that you're currently working on is, relative to other versions it may be connected to. 
-#for example, if you have not pushed your changes, or not committed your changes, it will tell you so. if the main branch is ahead of the lcoal branch, it will tell you that too. 
+#this tells you what the status of the code that you're currently working on is, relative to other versions it may be connected to.
+#for example, if you have not pushed your changes, or not committed your changes, it will tell you so. if the main branch is ahead of the lcoal branch, it will tell you that too.
 
 # git add
 #this will add one or more files (you can specify) to the queue so that you don't have to add all of them at once, only the ones you specify.
@@ -399,7 +398,7 @@ if __name__ == "__main__":
 #I had to refresh my mind on this one, but "Git remote add" will create a new connection record to a remote repository.
 
 # git remote -v
-#I also had to refresh my mind on this one; 
+#I also had to refresh my mind on this one; "To check what the git thinks the remote(s) is/are; the v stands for verbose, which asks for a bit more information"
 
 # git push
 
@@ -421,7 +420,7 @@ if __name__ == "__main__":
 
 # pwd - (print working directory - prints where you currently are)
 
-# cp - 
+# cp -
 
 # mv
 
@@ -500,4 +499,3 @@ if __name__ == "__main__":
 # How do you create a tuple?
 
 # How to index a tuple
-
