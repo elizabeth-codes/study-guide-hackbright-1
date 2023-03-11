@@ -60,8 +60,12 @@ def n_long_words(words, n):
         >>> n_long_words(["I", "like", "apples", "bananas", "you"], 5)
         ['apples', 'bananas']
     """
+    words_of_a_certain_length = []
+    for word in words:
+        if len(word) > n:
+            words_of_a_certain_length.append(word)
 
-    return ['the wrong thing']
+    return words_of_a_certain_length
 
 
 def smallest_int(numbers):

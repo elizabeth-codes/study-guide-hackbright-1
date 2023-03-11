@@ -1,26 +1,26 @@
-def long_words(words):
-    """Return words in input list that longer than 4 characters.
+def n_long_words(words, n):
+    """Return words in list longer than `n` characters.
     
     For example::
     
-        >>> long_words(["hello", "a", "b", "hi", "muffin", "muffin"])
-        ['hello', 'muffin', 'muffin']
-    
-    (If there are duplicates, show both --- notice "muffin" appears
-    twice in output)
-    
-    If no words are longer than 4 characters, return an empty list::
-    
-        >>> long_words(["all", "are", "tiny"])
-        []
+        >>> n_long_words(
+        ...     ["hello", "hey", "spam", "spam", "muffin", "muffin"],
+        ...     3
+        ... )
+        ['hello', 'spam', 'spam', 'muffin', 'muffin']
+        >>> n_long_words(["I", "like", "apples", "bananas", "you"], 5)
+        ['apples', 'bananas']
     """
-    words = ['a', 'be', 'cat', 'doge', 'elephant', 'froggie', 'giraffe']
-    long_words_collection = []
+    words = [
+        "a", "be", "cat", "doge", "elephant", "giraffe", "horse", "iguana"
+    ]
+    words_of_a_certain_length = []
     for word in words:
-        if len(word) > 4:
-            long_words_collection.append(word)
+        if len(word) > n:
+            words_of_a_certain_length.append(word)
 
-    print(long_words_collection)
+    # return words_of_a_certain_length
+    print(words_of_a_certain_length)
 
 
-long_words('words')
+n_long_words("words", 5)
