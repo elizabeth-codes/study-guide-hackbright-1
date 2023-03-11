@@ -1,26 +1,29 @@
-def n_long_words(words, n):
-    """Return words in list longer than `n` characters.
+def smallest_int(numbers):
+    """Find the smallest integer in a list of integers and return it.
+    **DO NOT USE** the built-in function `min()`!
     
     For example::
     
-        >>> n_long_words(
-        ...     ["hello", "hey", "spam", "spam", "muffin", "muffin"],
-        ...     3
-        ... )
-        ['hello', 'spam', 'spam', 'muffin', 'muffin']
-        >>> n_long_words(["I", "like", "apples", "bananas", "you"], 5)
-        ['apples', 'bananas']
+        >>> smallest_int([-5, 2, -5, 7])
+        -5
+        >>> smallest_int([3, 7, 2, 8, 4])
+        2
+    
+    If the input list is empty, return `None`::
+    
+        >>> smallest_int([]) is None
+        True
     """
-    words = [
-        "a", "be", "cat", "doge", "elephant", "giraffe", "horse", "iguana"
-    ]
-    words_of_a_certain_length = []
-    for word in words:
-        if len(word) > n:
-            words_of_a_certain_length.append(word)
 
-    # return words_of_a_certain_length
-    print(words_of_a_certain_length)
+    if numbers == []:
+        return None
+    local_minimum = numbers[0]
+
+    for number in numbers:
+        if number < local_minimum:
+            local_minimum = number
+    return local_minimum
 
 
-n_long_words("words", 5)
+test_numbers = [-5, 2, -5, 7]
+print(smallest_int(test_numbers))

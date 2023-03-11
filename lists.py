@@ -85,7 +85,14 @@ def smallest_int(numbers):
         True
     """
 
-    return 100
+    if numbers == []:
+        return None
+    local_minimum = numbers[0]
+
+    for number in numbers:
+        if number < local_minimum:
+            local_minimum = number
+    return local_minimum
 
 
 def largest_int(numbers):
