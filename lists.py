@@ -39,12 +39,12 @@ def long_words(words):
         >>> long_words(["all", "are", "tiny"])
         []
     """
-    long_words = []
+    long_words_collection = []
     for word in words:
         if len(word) > 4:
-            long_words.append(word)
+            long_words_collection.append(word)
 
-    return ['long_words']
+    return long_words_collection
 
 
 def n_long_words(words, n):
