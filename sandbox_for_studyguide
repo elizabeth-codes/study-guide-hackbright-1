@@ -1,26 +1,19 @@
-numbers = [1, 5]
+words = ["hello", "hey", "hello", "spam"]
 
 
-def halvesies(numbers):
-    """Return list of numbers from input list, each divided by two.
+def word_lengths(words):
+    """Return the length of words in the input list.
     
     For example::
     
-        >>> halvesies([2, 6, -2])
-        [1.0, 3.0, -1.0]
-   
-    If any of the numbers are odd, make sure you don't round off
-    the half::
-   
-        >>> halvesies([1, 5])
-        [0.5, 2.5]
+        >>> word_lengths(["hello", "hey", "hello", "spam"])
+        [5, 3, 5, 4]
     """
-    list_of_numbers_after_halving = []
-    for number in numbers:
-        number = int(number) / 2
-        list_of_numbers_after_halving.append(number)
+    word_lengths_list = []
+    for word in words:
+        length_of_the_word = len(word)
+        word_lengths_list.append(length_of_the_word)
+    return (word_lengths_list)
 
-    return list_of_numbers_after_halving
 
-
-print(halvesies(numbers))
+print(word_lengths(words))
