@@ -175,7 +175,14 @@ def sum_numbers(numbers):
         0
     """
 
-    return None
+    if numbers == []:
+        return 0
+
+    sum_so_far = 0
+    for number in numbers:
+        sum_so_far = sum_so_far + number
+
+    return sum_so_far
 
 
 def mult_numbers(numbers):
