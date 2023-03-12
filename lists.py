@@ -258,7 +258,16 @@ def average(numbers):
     a feel free to provide a good solution here.)
     """
 
-    return 0
+    if numbers == []:
+        return None
+
+    dividend = len(numbers)
+    sum_of_numbers = 0
+    for number in numbers:
+        sum_of_numbers = sum_of_numbers + number
+
+    quotient = sum_of_numbers / dividend
+    return quotient
 
 
 def join_strings_with_comma(words):

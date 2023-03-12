@@ -1,29 +1,35 @@
-strings_list = []
+numbers = []
 
 
-def join_strings(words):
-    """Return a string of all input strings joined together.
-    Python has a built-in method, `list.join()` --- but for
-    this exercise, **you should not use it**.
+def average(numbers):
+    """Return the average (mean) of the list of numbers given.
     
     For example::
     
-        >>> join_strings(["spam", "spam", "muffin", "balloonicorn"])
-        'spamspammuffinballoonicorn'
+        >>> average([2, 4])
+        3.0
     
-    For an empty list, you should return an empty string::
+    This should handle cases where the result isn't an integer::
     
-        >>> join_strings([])
-        ''
+        >>> average([2, 12, 3])
+        5.666666666666667
+    
+    There is no defined answer if the list given is empty;
+    it's fine if this raises an error when given an empty list.
+    (Think of the best way to handle an empty input list, though,
+    a feel free to provide a good solution here.)
     """
 
-    if strings_list == "":
-        return ''
+    if numbers == []:
+        return None
 
-    all_the_strings = ""
-    for string in strings_list:
-        all_the_strings = all_the_strings + string
-    return all_the_strings
+    dividend = len(numbers)
+    sum_of_numbers = 0
+    for number in numbers:
+        sum_of_numbers = sum_of_numbers + number
+
+    quotient = sum_of_numbers / dividend
+    return quotient
 
 
-print(join_strings(strings_list))
+print(average(numbers))
