@@ -1,31 +1,26 @@
-numbers = []
+numbers = [1, 5]
 
 
-def largest_int(numbers):
-    """Find the largest integer in a list of integers and return it.
-    **DO NOT USE** the built-in function `max()`!
+def halvesies(numbers):
+    """Return list of numbers from input list, each divided by two.
     
     For example::
     
-        >>> largest_int([-5, 2, -5, 7])
-        7
-        >>> largest_int([3, 7, 2, 8, 4])
-        8
-    
-    If the input list is empty, return None::
-    
-        >>> largest_int([]) is None
-        True
+        >>> halvesies([2, 6, -2])
+        [1.0, 3.0, -1.0]
+   
+    If any of the numbers are odd, make sure you don't round off
+    the half::
+   
+        >>> halvesies([1, 5])
+        [0.5, 2.5]
     """
-
-    if numbers == []:
-        return None
-    local_maximum = numbers[0]
-
+    list_of_numbers_after_halving = []
     for number in numbers:
-        if number > local_maximum:
-            local_maximum = number
-    return local_maximum
+        number = int(number) / 2
+        list_of_numbers_after_halving.append(number)
+
+    return list_of_numbers_after_halving
 
 
-print(largest_int(numbers))
+print(halvesies(numbers))

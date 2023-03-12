@@ -136,8 +136,12 @@ def halvesies(numbers):
         >>> halvesies([1, 5])
         [0.5, 2.5]
     """
+    list_of_numbers_after_halving = []
+    for number in numbers:
+        number = int(number) / 2
+        list_of_numbers_after_halving.append(number)
 
-    return []
+    return list_of_numbers_after_halving
 
 
 def word_lengths(words):
