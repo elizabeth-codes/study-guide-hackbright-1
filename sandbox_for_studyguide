@@ -1,29 +1,31 @@
-def smallest_int(numbers):
-    """Find the smallest integer in a list of integers and return it.
-    **DO NOT USE** the built-in function `min()`!
+numbers = []
+
+
+def largest_int(numbers):
+    """Find the largest integer in a list of integers and return it.
+    **DO NOT USE** the built-in function `max()`!
     
     For example::
     
-        >>> smallest_int([-5, 2, -5, 7])
-        -5
-        >>> smallest_int([3, 7, 2, 8, 4])
-        2
+        >>> largest_int([-5, 2, -5, 7])
+        7
+        >>> largest_int([3, 7, 2, 8, 4])
+        8
     
-    If the input list is empty, return `None`::
+    If the input list is empty, return None::
     
-        >>> smallest_int([]) is None
+        >>> largest_int([]) is None
         True
     """
 
     if numbers == []:
         return None
-    local_minimum = numbers[0]
+    local_maximum = numbers[0]
 
     for number in numbers:
-        if number < local_minimum:
-            local_minimum = number
-    return local_minimum
+        if number > local_maximum:
+            local_maximum = number
+    return local_maximum
 
 
-test_numbers = [-5, 2, -5, 7]
-print(smallest_int(test_numbers))
+print(largest_int(numbers))

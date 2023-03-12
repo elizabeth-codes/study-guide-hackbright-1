@@ -112,7 +112,14 @@ def largest_int(numbers):
         True
     """
 
-    return 0
+    if numbers == []:
+        return None
+    local_maximum = numbers[0]
+
+    for number in numbers:
+        if number > local_maximum:
+            local_maximum = number
+    return local_maximum
 
 
 def halvesies(numbers):
