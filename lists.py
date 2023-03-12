@@ -214,7 +214,6 @@ def mult_numbers(numbers):
     return product
 
 
-
 def join_strings(words):
     """Return a string of all input strings joined together.
     Python has a built-in method, `list.join()` --- but for
@@ -231,7 +230,13 @@ def join_strings(words):
         ''
     """
 
-    return "Not the right thing"
+    if words == "":
+        return ''
+
+    all_the_strings = ""
+    for word in words:
+        all_the_strings = all_the_strings + word
+    return all_the_strings
 
 
 def average(numbers):

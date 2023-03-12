@@ -1,36 +1,29 @@
-numbers = []
+strings_list = []
 
 
-def mult_numbers(numbers):
-    """Return product (result of multiplication) of numbers in list.
+def join_strings(words):
+    """Return a string of all input strings joined together.
+    Python has a built-in method, `list.join()` --- but for
+    this exercise, **you should not use it**.
     
     For example::
     
-        >>> mult_numbers([1, 2, 3])
-        6
+        >>> join_strings(["spam", "spam", "muffin", "balloonicorn"])
+        'spamspammuffinballoonicorn'
     
-    Obviously, if there is a zero in input, the product is zero::
+    For an empty list, you should return an empty string::
     
-        >>> mult_numbers([10, 20, 0, 50])
-        0
-    
-    As explained at http://en.wikipedia.org/wiki/Empty_product,
-    if the list is empty, the product should be 1::
-    
-        >>> mult_numbers([])
-        1
+        >>> join_strings([])
+        ''
     """
-    if 0 in numbers:
-        return 0
 
-    if numbers == []:
-        return 1
+    if strings_list == "":
+        return ''
 
-    product = 1
-    for number in numbers:
-        product = product * number
-
-    return product
+    all_the_strings = ""
+    for string in strings_list:
+        all_the_strings = all_the_strings + string
+    return all_the_strings
 
 
-print(mult_numbers(numbers))
+print(join_strings(strings_list))
