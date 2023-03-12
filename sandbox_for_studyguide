@@ -1,30 +1,36 @@
 numbers = []
 
 
-def sum_numbers(numbers):
-    """Return the sum of all of the numbers in the list.
-    Python has a built-in function, `sum()`, which already does
-    this --- but for this exercise, you should not use it.
+def mult_numbers(numbers):
+    """Return product (result of multiplication) of numbers in list.
     
     For example::
     
-        >>> sum_numbers([1, 2, 3, 10])
-        16
+        >>> mult_numbers([1, 2, 3])
+        6
     
-    Any empty list should return the sum of zero::
+    Obviously, if there is a zero in input, the product is zero::
     
-        >>> sum_numbers([])
+        >>> mult_numbers([10, 20, 0, 50])
         0
+    
+    As explained at http://en.wikipedia.org/wiki/Empty_product,
+    if the list is empty, the product should be 1::
+    
+        >>> mult_numbers([])
+        1
     """
+    if 0 in numbers:
+        return 0
 
     if numbers == []:
-        return None
+        return 1
 
-    sum_so_far = 0
+    product = 1
     for number in numbers:
-        sum_so_far = sum_so_far + number
+        product = product * number
 
-    return sum_so_far
+    return product
 
 
-print(sum_numbers(numbers))
+print(mult_numbers(numbers))

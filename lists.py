@@ -20,9 +20,6 @@ def print_list(items):
         print(item)
 
 
-print_list("items")
-
-
 def long_words(words):
     """Return words in input list that longer than 4 characters.
     
@@ -204,8 +201,18 @@ def mult_numbers(numbers):
         >>> mult_numbers([])
         1
     """
+    if 0 in numbers:
+        return 0
 
-    return None
+    if numbers == []:
+        return 1
+
+    product = 1
+    for number in numbers:
+        product = product * number
+
+    return product
+
 
 
 def join_strings(words):
