@@ -1,35 +1,33 @@
-numbers = []
+words = ["Labrador"]
 
 
-def average(numbers):
-    """Return the average (mean) of the list of numbers given.
+def join_strings_with_comma(words):
+    """Return ['list', 'of', 'words'] like "list, of, words".
     
     For example::
+     
+        >>> join_strings_with_comma(
+        ...     ["Labrador", "Poodle", "French Bulldog"]
+        ...     )
+        'Labrador, Poodle, French Bulldog'
     
-        >>> average([2, 4])
-        3.0
-    
-    This should handle cases where the result isn't an integer::
-    
-        >>> average([2, 12, 3])
-        5.666666666666667
-    
-    There is no defined answer if the list given is empty;
-    it's fine if this raises an error when given an empty list.
-    (Think of the best way to handle an empty input list, though,
-    a feel free to provide a good solution here.)
+    If there's only one thing in the list, it should return just that
+    thing, of course::
+   
+        >>> join_strings_with_comma(["Pretzel"])
+        'Pretzel'
     """
 
-    if numbers == []:
-        return None
+    if len(words) == 1:
+        return words[0]
 
-    dividend = len(numbers)
-    sum_of_numbers = 0
-    for number in numbers:
-        sum_of_numbers = sum_of_numbers + number
+    words_together_with_commas = ""
+    for word in words:
+        word = word + ", "
+        words_together_with_commas = words_together_with_commas + word
 
-    quotient = sum_of_numbers / dividend
-    return quotient
+    words_together_with_commas = words_together_with_commas[:-2]
+    return words_together_with_commas
 
 
-print(average(numbers))
+print(join_strings_with_comma(words))
