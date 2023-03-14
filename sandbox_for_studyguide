@@ -1,33 +1,66 @@
-words = ["Labrador"]
+# def reverse_list_mimi(items):
+#     """Return the input list, reversed.
+#     **Do not use** the python function `reversed()` or the method
+#     `list.reverse()`.
+
+#     For example::
+
+#         >>> reverse_list([1, 2, 3])
+#         [3, 2, 1]
+#         >>> reverse_list(["cookies", "love", "I"])
+#         ['I', 'love', 'cookies']
+
+#     You should do this without changing the original list::
+
+#         >>> orig = ["apple", "berry", "cherry"]
+#         >>> reverse_list(orig)
+#         ['cherry', 'berry', 'apple']
+#         >>> orig
+#         ['apple', 'berry', 'cherry']
+#     """
+
+#     new_order_list = [None for item in items]
+#     print(new_order_list)
+
+#     for i, word in enumerate(items):
+#         print(f"word #{-(i+1)} is {word}")
+#         new_n = (-(i + 1))
+#         new_order_list[new_n] = word
+
+#     return (new_order_list)
+
+items = ["cookies", "love", "really", "I"]
+# print(reverse_list_mimi(items))
 
 
-def join_strings_with_comma(words):
-    """Return ['list', 'of', 'words'] like "list, of, words".
+def reverse_list(items):
+    """Return the input list, reversed.
+    **Do not use** the python function `reversed()` or the method
+    `list.reverse()`.
     
     For example::
-     
-        >>> join_strings_with_comma(
-        ...     ["Labrador", "Poodle", "French Bulldog"]
-        ...     )
-        'Labrador, Poodle, French Bulldog'
     
-    If there's only one thing in the list, it should return just that
-    thing, of course::
-   
-        >>> join_strings_with_comma(["Pretzel"])
-        'Pretzel'
+        >>> reverse_list([1, 2, 3])
+        [3, 2, 1]
+        >>> reverse_list(["cookies", "love", "I"])
+        ['I', 'love', 'cookies']
+    
+    You should do this without changing the original list::
+    
+        >>> orig = ["apple", "berry", "cherry"]
+        >>> reverse_list(orig)
+        ['cherry', 'berry', 'apple']
+        >>> orig
+        ['apple', 'berry', 'cherry']
     """
+    reversed_list = []
+    n = len(items)
 
-    if len(words) == 1:
-        return words[0]
-
-    words_together_with_commas = ""
-    for word in words:
-        word = word + ", "
-        words_together_with_commas = words_together_with_commas + word
-
-    words_together_with_commas = words_together_with_commas[:-2]
-    return words_together_with_commas
+    for index in range(n - 1, -1, -1):
+        # print(number)
+        reversed_list.append(items[index])
+        # print(reversed_list)
+    return reversed_list
 
 
-print(join_strings_with_comma(words))
+print(reverse_list(items))
