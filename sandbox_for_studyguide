@@ -1,66 +1,29 @@
-# def reverse_list_mimi(items):
-#     """Return the input list, reversed.
-#     **Do not use** the python function `reversed()` or the method
-#     `list.reverse()`.
-
-#     For example::
-
-#         >>> reverse_list([1, 2, 3])
-#         [3, 2, 1]
-#         >>> reverse_list(["cookies", "love", "I"])
-#         ['I', 'love', 'cookies']
-
-#     You should do this without changing the original list::
-
-#         >>> orig = ["apple", "berry", "cherry"]
-#         >>> reverse_list(orig)
-#         ['cherry', 'berry', 'apple']
-#         >>> orig
-#         ['apple', 'berry', 'cherry']
-#     """
-
-#     new_order_list = [None for item in items]
-#     print(new_order_list)
-
-#     for i, word in enumerate(items):
-#         print(f"word #{-(i+1)} is {word}")
-#         new_n = (-(i + 1))
-#         new_order_list[new_n] = word
-
-#     return (new_order_list)
-
-items = ["cookies", "love", "really", "I"]
-# print(reverse_list_mimi(items))
-
-
-def reverse_list(items):
-    """Return the input list, reversed.
+def reverse_list_in_place(items):
+    """Reverse the input list `in place`.
+    Reverse the input list given, but do it "in place" --- that is,
+    do not create a new list and return it, but modify the original
+    list.
     **Do not use** the python function `reversed()` or the method
     `list.reverse()`.
     
     For example::
     
-        >>> reverse_list([1, 2, 3])
-        [3, 2, 1]
-        >>> reverse_list(["cookies", "love", "I"])
-        ['I', 'love', 'cookies']
-    
-    You should do this without changing the original list::
-    
-        >>> orig = ["apple", "berry", "cherry"]
-        >>> reverse_list(orig)
-        ['cherry', 'berry', 'apple']
+        >>> orig = [1, 2, 3]
+        >>> reverse_list_in_place(orig)
         >>> orig
-        ['apple', 'berry', 'cherry']
+        [3, 2, 1]
+        >>> orig = ["cookies", "love", "I"]
+        >>> reverse_list_in_place(orig)
+        >>> orig
+        ['I', 'love', 'cookies']
     """
-    reversed_list = []
     n = len(items)
+    for index in range(0, (n // 2)):
+        temp = items[index]
+        items[index] = items[n - index - 1]
+        items[n - index - 1] = temp
+    return items
 
-    for index in range(n - 1, -1, -1):
-        # print(number)
-        reversed_list.append(items[index])
-        # print(reversed_list)
-    return reversed_list
 
-
-print(reverse_list(items))
+items = ["world", "the", "in", "smol", "smollest", "the", "is", "DouDou"]
+print(reverse_list_in_place(items))

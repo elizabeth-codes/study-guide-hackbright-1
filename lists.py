@@ -383,8 +383,11 @@ def reverse_list_in_place(items):
         >>> orig
         ['I', 'love', 'cookies']
     """
-
-    return []
+    n = len(items)
+    for index in range(0, (n // 2)):
+        temp = items[index]
+        items[index] = items[n - index - 1]
+        items[n - index - 1] = temp
 
 
 def duplicates(items):
