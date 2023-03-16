@@ -412,8 +412,18 @@ def duplicates(items):
         >>> orig
         ['apple', 'apple', 'berry']
     """
-
-    return []
+    items_seen_already = []
+    seen_a_second_time = []
+    for item in items:
+        if item in items_seen_already:
+            seen_a_second_time.append(item)
+        elif item not in items_seen_already:
+            items_seen_already.append(item)
+    finalized_list = []
+    for item in seen_a_second_time:
+        if item not in finalized_list:
+            finalized_list.append(item)
+    return finalized_list
 
 
 def find_letter_indices(words, letter):
