@@ -426,6 +426,9 @@ def duplicates(items):
     return finalized_list
 
 
+"""use ordered = sorted(finalized_list)"""
+
+
 def find_letter_indices(words, letter):
     """Return list of indices where letter appears in each word.
     Given a list of words and a letter, return a list of integers
@@ -450,8 +453,15 @@ def find_letter_indices(words, letter):
     ("o" does not appear in "jumps", so the result for that input is
     `None`.)
     """
-
-    return []
+    index_of_letter = 0
+    indices_of_letter = []
+    for word in words:
+        if letter in word:
+            index_of_letter = word.index(letter)
+            indices_of_letter.append(index_of_letter)
+        elif letter not in word:
+            indices_of_letter.append(None)
+    return indices_of_letter
 
 
 #####################################################################

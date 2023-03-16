@@ -1,40 +1,40 @@
-items = [1, 2, 2, 4, 4, 4, 7]
+words = ['odd', 'dog', 'who']
+letter = 'o'
 
 
-def duplicates(items):
-    """Return list of words from input list which were duplicates.
-    Return a list of words which are duplicated in the input list.
-    The returned list should be in ascending order.
-   
+def find_letter_indices(words, letter):
+    """Return list of indices where letter appears in each word.
+    Given a list of words and a letter, return a list of integers
+    that correspond to the index of the first occurrence of the letter
+    in that word.
+    **DO NOT** use the `list.index()` method.
+    
     For example::
-   
-        >>> duplicates(
-        ...     ["apple", "banana", "banana", "cherry", "apple"]
-        ... )
-        ['apple', 'banana']
-        >>> duplicates([1, 2, 2, 4, 4, 4, 7])
-        [2, 4]
-   
-    You should do this without changing the original list::
-   
-        >>> orig = ["apple", "apple", "berry"]
-        >>> duplicates(orig)
-        ['apple']
-        >>> orig
-        ['apple', 'apple', 'berry']
+    
+        >>> find_letter_indices(['odd', 'dog', 'who'], 'o')
+        [0, 1, 2]
+    
+    ("o" is at index 0 in "odd", is at index 1 in "dog", and at
+    index 2 in "who")
+    
+    If the letter doesn't occur in one of the words, use `None` for
+    that word in the output list. For example::
+    
+        >>> find_letter_indices(['odd', 'dog', 'who', 'jumps'], 'o')
+        [0, 1, 2, None]
+    
+    ("o" does not appear in "jumps", so the result for that input is
+    `None`.)
     """
-    items_seen_already = []
-    seen_a_second_time = []
-    for item in items:
-        if item in items_seen_already:
-            seen_a_second_time.append(item)
-        elif item not in items_seen_already:
-            items_seen_already.append(item)
-    finalized_list = []
-    for item in seen_a_second_time:
-        if item not in finalized_list:
-            finalized_list.append(item)
-    return finalized_list
+    index_of_letter = 0
+    indices_of_letter = []
+    for word in words:
+        if letter in word:
+            index_of_letter = word.index(letter)
+            indices_of_letter.append(index_of_letter)
+        elif letter not in word:
+            indices_of_letter.append(None)
+    return indices_of_letter
 
 
-print(duplicates(items))
+print(find_letter_indices(words, letter))
