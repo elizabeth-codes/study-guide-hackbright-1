@@ -423,7 +423,8 @@ def duplicates(items):
     for item in seen_a_second_time:
         if item not in finalized_list:
             finalized_list.append(item)
-    return finalized_list
+    ordered = sorted(finalized_list)
+    return ordered
 
 
 """use ordered = sorted(finalized_list)"""
@@ -527,16 +528,20 @@ if __name__ == "__main__":
 #I also had to refresh my mind on this one; "To check what the git thinks the remote(s) is/are; the v stands for verbose, which asks for a bit more information"
 
 # git push
+#pushes it to wherever you specified, or you can specify where to push it to after git push
 
 # What does the file .gitignore do? What is the content of the .gitignore file?
+#Git looks in a file called .gitignore for files to ignore.
 
 # What are some files that git should generally ignore?
+#The contents are secrets.sh or any other file containing passwords/secrets/tokens, notes you don't want others to see, python virtual environment directory, python .pyc files, any crufty files your editor or operating system makes.
 
 # How can you tell whether a file is being ignored by git or not?
 
 # If you git add a secret file, is it possible to remove that file from the history of git?
 
 # Why is using the command line important?
+#because it allows the code to interact with other files and versions of code
 
 # What is the prompt in the context of the command line?
 
